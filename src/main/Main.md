@@ -8,6 +8,6 @@ Enter your name here: Santiago Castilla
 
 ## The best animals
 
-1. Cuttlefish
-2. Platypus
-3. Three-toed sloth
+1. Shark 
+2. Red panda
+3. Squirrel
