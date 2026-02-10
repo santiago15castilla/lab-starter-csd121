@@ -8,5 +8,5 @@
  */
 package core;
 
-public class CardStack {
+public class m       CardStack {
 }
