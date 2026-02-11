@@ -1,19 +1,37 @@
+import core.HighCardGame;
+import ui.Console;
+
 public class Main {
 
-    static void main() {
+    public static void main(String[] args) {
 
-        /*
-             Place your main game logic here.
-             This is the ONLY code file that should have any reference to the Console class.
+        Console.println("READY TO PLAY?! ");
 
-             The basic flow of the game is as follows:
+        var names = Console.promptForNInputs("Enter player name", 2);
 
-             1. Prompt for player names
-             2. Deal a shuffled deck evenly to each of the players
-             3. While the players have cards and wish to continue:
-                 b. All players draw one card and reveal them
-                 c. The player with the higher card wins the round (or it's a tie)
-         */
+        var game = new HighCardGame(names.get(0), names.get(1));
+        while (game.canPlay()) {
 
+            String result = game.playRound();
+            Console.println(result);
+            Console.println("Score: " + game.getScore());
+
+            if (!game.canPlay()) {
+                break;
+            }
+
+            String choice = Console.promptForOption(
+                    "Play another round?",
+                    new String[]{"yes", "no"}
+            );
+
+            if (choice.equalsIgnoreCase("no")) {
+                break;
+            }
+        }
+        Console.println("Final Score:" + game.getScore());
+        Console.println(game.getFinalWinner());
+
+        Console.println("Game over!");
     }
 }
