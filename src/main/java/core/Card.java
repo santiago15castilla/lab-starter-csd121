@@ -38,15 +38,15 @@ public class Card {    //new type defined
         KING(13, "K"),
         ACE(14, "A");
 
-        private final int value;
+        private final int number;
         private final String display;
 
         Rank(int value, String display) {
-            this.value = value;
+            this.number = value;
             this.display = display;
         }
         public int getValue() {
-            return value;
+            return number;
         }
         public String getDisplay() {
             return display;
