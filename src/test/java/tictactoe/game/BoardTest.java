@@ -84,7 +84,9 @@ class BoardTest {
 
     @Test
     void toString_CorrectCharacters() {
-        Board b = new Board("XOX-O-X--");
+        Board b = new Board("XOX" +
+                               "-O-" +
+                               "X--");
         String s = b.toString();
         String[] lines = s.split("\n"); //split into rows by newline
         assertEquals(3, lines.length);
@@ -95,16 +97,24 @@ class BoardTest {
 
     @Test
     void equals_sameBoard_returnsTrue() {
-        Board b1 = new Board("XOX-O-X--");
-        Board b2 = new Board("XOX-O-X--");
+        Board b1 = new Board("XOX" +
+                                "-O-" +
+                                "X--");
+        Board b2 = new Board("XOX" +
+                                "-O-" +
+                                "X--");
         assertEquals(b1, b2); //equals must return true
         assertEquals(b1.hashCode(), b2.hashCode()); //equal objects same hash
     }
 
     @Test
     void equals_differentBoard_returnsFalse() {
-        Board b1 = new Board("XOX-O-X--");
-        Board b2 = new Board("XOXO-X---"); //different token
+        Board b1 = new Board("XOX" +
+                                "-O-" +
+                                "X--");
+        Board b2 = new Board("XOX" +
+                                "O-X" +
+                                "---"); //different token
         assertNotEquals(b1, b2); //must not be equal
     }
 
