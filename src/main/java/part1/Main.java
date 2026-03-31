@@ -14,11 +14,8 @@ public class Main {
 
         try {
 
-            /* === Easy loggers === */
-            // TODO: Implementnt AT LEAST one of these
-//            Logger logger = new ColorLogger();
-//            Logger logger = new InDenialLogger();
-//            Logger logger = new LoudLogger();
+            LoudLogger logger = new LoudLogger();
+            run(logger, 10);
 
             /* === Medium loggers === */
             // TODO: Implement at least one of these
@@ -27,15 +24,16 @@ public class Main {
 //            Logger logger = new StreamLogger(System.out);                      // Using System.out as the destination
 //            Logger logger = new StreamLogger(new FileOutputStream("log.txt")); // Using a file as the destination
 
-            // TODO: Implement MemoryLogger
-//            MemoryLogger logger = new MemoryLogger();
 
             // TODO: (Optional) Implement a JDBC logger
 //            Logger logger = new JdbcLogger("jdbc:sqlite:log.db");
+            MemoryLogger loggerBrain =  new MemoryLogger();
+            run (loggerBrain, 10);
+            export (loggerBrain, System.out);
 
             // TODO: you can change the first argument here to one of the loggers above,
             //       or to a different constructor call based on the examples above.
-            run(new ConsoleLogger(), 50);
+            run(new ConsoleLogger(), 10);
 
             // TODO: uncomment this while you are trying out your MemoryLogger
             // export(logger, new FileOutputStream("logs.txt"));  // OR try System.out as the second parameter!
