@@ -22,7 +22,7 @@ public class Main {
             run(loggerBrain, 5);
             export(loggerBrain, System.out);
 
-            run(new ConsoleLogger(), 50);
+            run(new ConsoleLogger(), 5);
 
         } catch (Exception e) {
             IO.println("Could not create log file: " + e.getMessage());
