@@ -8,3 +8,5 @@ I had conversations about:
 - Features in JavaFX like Borderpanes, buttons. 
 - Troobleshooting with the key.
 - separate IU code 
+
+https://chatgpt.com/share/69de7a5d-d878-83ea-912a-68e28b9c48ba
